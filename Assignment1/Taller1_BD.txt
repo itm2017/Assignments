@@ -35,7 +35,7 @@ AUTOEXTEND ON NEXT 500K MAXSIZE 50M;
 /3* Set the Undo tablesapce to be used in the system
 
 SELECT TEST_UNDO
-FROM dba_test_undo
+FROM dba_TEST_UNDO
 WHERE TABLE_NAME = 'TEST_UNODO';
 
 /*4. Create a DBA user and assign it to the tablespace called " vehicles_fleet ", this user has unlimited

@@ -1,10 +1,42 @@
-
+﻿
 /*Integrantes:
 Yesika Marcela Montes rodas (user: itm2017)
 Yair Arboleda
 Juan David Echeverri */
 
+/*1. Create 2 tablespace one "vehicle_fleet" and "test_purposes"
 
+1--CREATE TABLESPACE
+
+CREATE TABLESPACE VEHICLES_FLEET 
+DATAFILE 
+'C:\Users\Virtual\Desktop\Taller\VEHICLES_FLEET1.dbf' size 100M
+'C:\Users\Virtual\Desktop\Taller\VEHICLES_FLEET2.dbf' size 100M
+AUTOEXTEND ON NEXT 500K MAXSIZE 1G
+EXTENT MANAGEMENT LOCAL
+SEGMENT SPACE MANAGEMENT AUTO
+ONLINE;
+
+CREATE TABLESPACE TEST_PURPOSES 
+DATAFILE 
+'C:\Users\Virtual\Desktop\Taller\TEST_PURPOSES.dbf' size 100M
+AUTOEXTEND ON NEXT 500K MAXSIZE 500M
+EXTENT MANAGEMENT LOCAL
+SEGMENT SPACE MANAGEMENT AUTO
+ONLINE;
+
+/*2 Create Undo tablespace
+
+CREATE UNDO TABLESPACE TEST_UNDO
+DATAFILE 
+'C:\Users\Virtual\Desktop\Taller\TEST_UNDO.dbf' size 1M
+AUTOEXTEND ON NEXT 500K MAXSIZE 50M;
+
+/3* Set the Undo tablesapce to be used in the system
+
+SELECT TEST_UNDO
+FROM dba_test_undo
+WHERE TABLE_NAME = 'TEST_UNODO';
 
 /*4. Create a DBA user and assign it to the tablespace called " vehicles_fleet ", this user has unlimited
 space on the tablespace (0.5)*/
